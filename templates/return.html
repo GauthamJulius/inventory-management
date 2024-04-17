@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Returns</title>
+    <style>
+         body{
+            margin: 0;
+            padding: 0;
+            background-color: #45a049;
+            background-color: aquamarine;
+        }
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #45a049;
+            background-color: aquamarine;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #return-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #returns-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back" >back</a>
+    <div class="body">
+    <div id="return-form">
+        <h2>Product Returns</h2>
+        <label for="product">Product:</label>
+        <input type="text" id="product" placeholder="Enter product">
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" placeholder="Enter quantity">
+
+        <label for="reason">Reason for Return:</label>
+        <input type="text" id="reason" placeholder="Enter reason for return">
+
+        <button onclick="returnProduct()">Return Product</button>
+    </div>
+
+    <div id="returns-list">
+        <h3>Returns:</h3>
+        <ul id="returns"></ul>
+    </div>
+
+    <script>
+        function returnProduct() {
+            var product = document.getElementById('product').value;
+            var quantity = parseInt(document.getElementById('quantity').value);
+            var reason = document.getElementById('reason').value;
+
+            if (product && !isNaN(quantity) && reason) {
+                var returnsList = document.getElementById('returns');
+                var returnItem = document.createElement('li');
+                returnItem.textContent = quantity + ' ' + product + ' returned. Reason: ' + reason;
+                returnsList.appendChild(returnItem);
+
+                // You can perform further actions like updating the inventory, sending data to the server, etc.
+            } else {
+                alert('Please enter valid product, quantity, and reason for return.');
+            }
+        }
+    </script></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet/homepage.css')}}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <!-- <li><a href="/addadmin">Admin</a></li> -->
+                <li><a href="/product">Products</a></li>
+                <!-- <li><a href="/sales">Sales</a></li> -->
+                <li><a href="/purchase">Purchase</a></li>
+                <!-- <li><a href="/expence">Expence</a></li> -->
+                <li><a href="/shipping">Shipping</a></li>
+                <li><a href="/Return">Return</a></li>
+                <!-- <li><a href="/users">Users</a></li> -->
+                {% if session.name %}
+                <li><a href="/logout">Logout</a></li>
+                {% else %}
+                <li><a href="/login">login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h1>JR Inventory Management System</h1>
+            <p>Manage your products, categories, and generate reports seamlessly.</p>
+        </section>
+
+        <!-- Add more sections or content here as needed -->
+    </main>
+
+    <footer>
+        <p>&copy; JR Inventory Management System</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

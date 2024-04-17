@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet/product.css')}}">
+</head>
+<body>
+    <a href="/" class="back" >back</a>
+    <div class="container">
+        
+        <h1>Product List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product items will be dynamically added here -->
+            </tbody>
+        </table>
+        <a href="add_product.html">Add Product</a>
+    </div>
+</body>
+</html>
